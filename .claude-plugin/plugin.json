@@ -1,0 +1,6 @@
+{
+  "name": "excalidraw",
+  "version": "1.0.0",
+  "description": "Generate architecture diagrams as Excalidraw files from natural language",
+  "author": "yogeshmali"
+}
