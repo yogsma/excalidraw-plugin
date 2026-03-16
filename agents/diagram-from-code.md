@@ -1,4 +1,7 @@
 ---
+name: diagram-from-code
+model: sonnet
+color: green
 description: >
   Analyzes a codebase to automatically generate an architecture diagram.
   Use when asked to "diagram this codebase", "map the architecture",

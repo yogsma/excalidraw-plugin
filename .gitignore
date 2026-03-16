@@ -2,4 +2,3 @@ node_modules/
 *.png
 *.svg
 *.excalidraw
-!skills/excalidraw/references/
