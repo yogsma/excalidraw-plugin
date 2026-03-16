@@ -1,0 +1,17 @@
+{
+  "name": "yogsma-plugins",
+  "owner": {
+    "name": "yogeshmali"
+  },
+  "metadata": {
+    "description": "Excalidraw diagram generation plugin for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "excalidraw",
+      "source": "./",
+      "description": "Generate architecture diagrams as Excalidraw files from natural language",
+      "version": "1.0.0"
+    }
+  ]
+}
