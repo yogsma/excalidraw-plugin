@@ -138,6 +138,10 @@ The intermediate representation that Claude generates:
 - Large diagrams (20+ nodes) may be cluttered — use groups to manage complexity
 - `sharp` requires native compilation; falls back to SVG-only if unavailable
 
+## Privacy Policy
+
+This plugin processes all data locally on your machine. It does not collect, store, or transmit any user data. No external network requests are made — the diagram generation and export scripts run entirely offline. No analytics, telemetry, or tracking of any kind is included.
+
 ## License
 
 MIT
