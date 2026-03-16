@@ -6,22 +6,37 @@ A Claude Code plugin that generates architecture diagrams as Excalidraw files fr
 
 ## Installation
 
-Add to your Claude Code settings (`~/.claude/settings.json`):
+### From Marketplace (recommended)
 
-```json
-{
-  "plugins": ["https://github.com/yogsma/excalidraw-plugin"]
-}
+Add the marketplace and install the plugin:
+
+```
+/plugin marketplace add yogsma/excalidraw-plugin
+/plugin install excalidraw@yogsma-plugins
+```
+
+Then reload plugins to activate:
+
+```
+/reload-plugins
+```
+
+### Local Development
+
+To test the plugin locally without installing:
+
+```bash
+claude --plugin-dir /path/to/excalidraw-plugin
 ```
 
 Dependencies (`@dagrejs/dagre`, `sharp`) install automatically on first use.
 
 ## Usage
 
-### `/draw` Command
+### `/excalidraw:draw` Command
 
 ```
-/draw React frontend connecting to an Express API with PostgreSQL and Redis cache
+/excalidraw:draw React frontend connecting to an Express API with PostgreSQL and Redis cache
 ```
 
 This generates three files in your working directory:
@@ -29,9 +44,9 @@ This generates three files in your working directory:
 - `web-application.svg` — scalable vector graphic
 - `web-application.png` — 2x resolution raster image
 
-### Diagram-from-Code Agent
+### `excalidraw:diagram-from-code` Agent
 
-The plugin includes an autonomous agent that analyzes your codebase and generates an architecture diagram automatically. It discovers services, databases, queues, and their connections by examining:
+The plugin includes an autonomous agent that analyzes your codebase and generates an architecture diagram automatically. It can be selected from the `/agents` menu or triggered automatically when you ask Claude to diagram a codebase. It discovers services, databases, queues, and their connections by examining:
 
 - Package manifests (`package.json`, `go.mod`, etc.)
 - Docker configurations
@@ -100,8 +115,10 @@ The intermediate representation that Claude generates:
 ## Plugin Structure
 
 ```
-├── .claude-plugin/plugin.json          # Plugin manifest
-├── commands/draw.md                    # /draw slash command
+├── .claude-plugin/
+│   ├── plugin.json                     # Plugin manifest
+│   └── marketplace.json                # Marketplace distribution manifest
+├── commands/draw.md                    # /excalidraw:draw slash command
 ├── agents/diagram-from-code.md         # Codebase analysis agent
 └── skills/excalidraw/
     ├── SKILL.md                        # Auto-triggering skill
